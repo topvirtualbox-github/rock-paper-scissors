@@ -19,3 +19,13 @@ function playerChoice() {
     }
     return choice;
 }
+
+function playRound(player, computer) {
+    if (player === "Rock" && computer === "Scissors" || player === "Paper" && computer === "Rock" || player === "Scissors" && computer === "Paper") {
+        return "You Win! " + player + " beats " + computer;
+    } else if (player === "Rock" && computer === "Paper" || player === "Paper" && computer === "Scissors" || player === "Scissors" && computer === "Rock") {
+        return "You Lose! " + computer + " beats " + player;
+    } else {
+        return "It's a Tie!";
+    }
+}
