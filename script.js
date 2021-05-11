@@ -29,3 +29,30 @@ function playRound(player, computer) {
         return "It's a Tie!";
     }
 }
+
+function playGame() {
+    let numberRound = 1;
+    let playerScore = 0;
+    let computerScore = 0;
+    while (numberRound <= 5) {
+        console.log("ROUND " + numberRound);
+        let result = playRound(playerChoice(), computerChoice());
+        if (result[4] === "W") {
+            playerScore++;
+        } else if (result[4] === "L") {
+            computerScore++;
+        }
+        console.log(result);
+        console.log("PLAYER " + playerScore + " - " + computerScore + " COMPUTER");
+        numberRound++;
+    }
+    if (playerScore > computerScore) {
+        console.log("THE PLAYER WINS!!!");
+    } else if (computerScore > playerScore) {
+        console.log("THE COMPUTER WINS!!!");
+    } else {
+        console.log("IT'S A TIE!!!");
+    }
+}
+
+playGame();
