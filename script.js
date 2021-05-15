@@ -1,3 +1,22 @@
+const btnRock = document.querySelector("#btnRock");
+const btnPaper = document.querySelector("#btnPaper");
+const btnScissors = document.querySelector("#btnScissors");
+const displayRound = document.querySelector("#displayRound");
+const displayScore = document.querySelector("#displayScore");
+
+let playerScore = 0;
+let computerScore = 0;
+
+btnRock.addEventListener("click", function() {
+
+});
+btnPaper.addEventListener("click", function() {
+
+});
+btnScissors.addEventListener("click", function() {
+
+});
+
 function computerChoice() {
     let random = Math.random();
     if (random < 0.333) {
