@@ -8,13 +8,13 @@ let playerScore = 0;
 let computerScore = 0;
 
 btnRock.addEventListener("click", function() {
-
+    playRound("Rock", computerChoice());
 });
 btnPaper.addEventListener("click", function() {
-
+    playRound("Paper", computerChoice());
 });
 btnScissors.addEventListener("click", function() {
-
+    playRound("Scissors", computerChoice());
 });
 
 function computerChoice() {
@@ -29,11 +29,28 @@ function computerChoice() {
 }
 
 function playRound(player, computer) {
+    let result;
     if (player === "Rock" && computer === "Scissors" || player === "Paper" && computer === "Rock" || player === "Scissors" && computer === "Paper") {
-        return "You Win! " + player + " beats " + computer;
+        result = "You Win! " + player + " beats " + computer;
     } else if (player === "Rock" && computer === "Paper" || player === "Paper" && computer === "Scissors" || player === "Scissors" && computer === "Rock") {
-        return "You Lose! " + computer + " beats " + player;
+        result = "You Lose! " + computer + " beats " + player;
     } else {
-        return "It's a Tie!";
+        result = "It's a Tie!";
+    }
+    if (result[4] === "W") {
+        playerScore++;
+    } else if (result[4] === "L") {
+        computerScore++;
+    }
+    displayRound.textContent = result;
+    displayScore.textContent = "PLAYER " + playerScore + " - " + computerScore + " COMPUTER"; 
+    if (playerScore > 4 || computerScore > 4) {
+        if (playerScore > computerScore) {
+            displayScore.textContent += " (YOU WIN!!!)"; 
+        } else {
+            displayScore.textContent += " (YOU LOSE!!!)"; 
+        }
+        playerScore = 0;
+        computerScore = 0;
     }
 }
