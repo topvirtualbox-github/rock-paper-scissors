@@ -8,12 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="btnRock">Rock</button>
-    <button id="btnPaper">Paper</button>
-    <button id="btnScissors">Scissors</button>
-
-    <div id="displayRound"></div>
-    <div id="displayScore"></div>
+    <div id="container">
+        <div id="display">
+            <p>PLAYER</p>
+            <p id="score"></p>
+            <p>COMPUTER</p>
+        </div>
+        <div id="console">
+            <p id="message"></p>
+        </div>
+        <div id="keys">
+            <button id="btnRock">Rock</button>
+            <button id="btnPaper">Paper</button>
+            <button id="btnScissors">Scissors</button>
+        </div>
+        <div id="restart">
+            <button id="btnRestart">Restart</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>    
 </body>
