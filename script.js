@@ -1,4 +1,5 @@
 const score = document.querySelector("#score");
+const round = document.querySelector("#round");
 const message = document.querySelector("#message");
 const btnRock = document.querySelector("#btnRock");
 const btnPaper = document.querySelector("#btnPaper");
@@ -24,6 +25,7 @@ btnRestart.addEventListener("click", function() {
     scoreComputer = 0;
     playGame = true;
     score.textContent = scorePlayer + " - " + scoreComputer;
+    round.textContent = "";
     message.textContent = "";
 });
 
@@ -54,12 +56,12 @@ function playRound(player, computer) {
             scoreComputer++;
         }
         score.textContent = scorePlayer + " - " + scoreComputer;
-        message.textContent = resolution;
+        round.textContent = resolution;
         if (scorePlayer > 4 || scoreComputer > 4) {
             if (scorePlayer > scoreComputer) {
-                alert("YOU WIN");
+                message.textContent = "YOU WIN THE GAME";
             } else {
-                alert("YOU LOSE");
+                message.textContent = "YOU LOSE THE GAME";
             }
             playGame = false;
         }
